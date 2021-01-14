@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EC4899">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tailwind.min.css') }}">
+
+    <title>{{ title[1] }}</title>
+</head>
+<body>
+    <div class="container mx-auto">
+        <div class="container m-3">
+            <p>
+                <span class="text-xl text-pink-500">Title:</span><span> {{ title[1] }} </span>
+            </p>
+            <p>
+                <span class="text-xl text-pink-500">ID:</span><span> {{ title[0] }} </span>
+            </p>
+        </div>
+
+        <div class="container m-3">
+            <p> {{ note[1] }} </p>
+        </div>
+
+        <div class="container mx-3">
+            <h2 class="text-xl text-pink-500"> Links </h2>
+            <ul>
+                {% for link in links %}
+                    <li><a href=/note/{{ link[1] }} class="text-black hover:text-red-500">{{ link[1] }} - {{ link[2] }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="container mx-3">
+            <h2 class="text-xl text-pink-500"> Tags </h2>
+            <ul>
+                {% for tag in tags %}
+                <li>#<a href=/tag/{{ tag[2] }}>{{ tag[2] }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

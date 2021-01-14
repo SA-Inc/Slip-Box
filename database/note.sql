@@ -1,6 +1,9 @@
 CREATE TABLE Note (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    text_data TEXT NOT NULL
+    text_data TEXT NOT NULL,
+    create_date DATE DEFAULT (datetime('now','localtime')),
+    update_date DATE,
+    read_date DATE
 );
 
 INSERT INTO Note (text_data) VALUES ('Math Note 1');

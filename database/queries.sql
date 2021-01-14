@@ -40,3 +40,9 @@ WHERE nt.note_id == 11
 SELECT ic.note_id, ic.note_title
 FROM Index_Card AS ic
 WHERE ic.note_id == 11
+
+
+
+SELECT n.id, ic.note_title, n.create_date, n.read_date, n.update_date
+FROM Index_Card AS ic
+JOIN Note AS n ON ic.note_id == n.id

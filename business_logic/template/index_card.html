@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#EC4899">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tailwind.min.css') }}">
+
+    <title>Index Card</title>
+</head>
+<body>
+    <div class="container mx-auto">
+        <!-- HEADER -->
+        <div class="container m-3">
+            <p class="inline-block"><a href="/" class="text-xl text-red-500">Notes</a></p>
+            <p class="inline-block"><a href="/" class="text-xl text-green-500">Links</a></p>
+            <p class="inline-block"><a href="/" class="text-xl text-blue-500">Tags</a></p>
+        </div>
+        <div class="container m-3">
+            <p class="inline-block"><a href="/create" class="text-xl text-pink-500">Create</a></p>
+            <p class="inline-block"><a href="/create" class="text-xl text-pink-500">Statistics</a></p>
+        </div>
+
+        <!-- DATA -->
+        <div class="container mx-3">
+            <table class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="border">Id</th>
+                        <th class="border">Title</th>
+                        <th class="border">Create Date</th>
+                        <th class="border">Read Date</th>
+                        <th class="border">Update Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for note in data %}
+                    <tr class="hover:text-red-500">
+                        <td class="border">{{ note[0] }}</td>
+                        <td class="border"><a href=/note/{{ note[0] }}>{{ note[1] }}</a></td>
+                        <td class="border">{{ note[2] }}</td>
+                        <td class="border">{{ note[3] }}</td>
+                        <td class="border">{{ note[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

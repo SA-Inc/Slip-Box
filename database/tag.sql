@@ -1,6 +1,6 @@
 CREATE TABLE Tag (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL
+    title TEXT UNIQUE NOT NULL
 );
 
 INSERT INTO Tag (title) VALUES ('math');

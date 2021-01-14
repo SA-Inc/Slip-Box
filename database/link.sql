@@ -1,12 +1,12 @@
-CREATE TABLE Link (
-    note_from_id INTEGER,
-    note_to_id INTEGER,
-    PRIMARY KEY (note_from_id, note_to_id),
-    FOREIGN KEY (note_from_id) 
-        REFERENCES Note (note_from_id)
-    FOREIGN KEY (note_to_id) 
-        REFERENCES Note (note_to_id)
-);
+-- CREATE TABLE Link (
+--     note_from_id INTEGER,
+--     note_to_id INTEGER,
+--     PRIMARY KEY (note_from_id, note_to_id),
+--     FOREIGN KEY (note_from_id) 
+--         REFERENCES Note (note_from_id)
+--     FOREIGN KEY (note_to_id) 
+--         REFERENCES Note (note_to_id)
+-- );
 
 CREATE TABLE Link (
     note_from_id INTEGER,
